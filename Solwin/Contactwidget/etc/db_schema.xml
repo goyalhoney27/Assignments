@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="solwin_contactwidget_contactadditional" resource="default" engine="innodb" comment="solwin_contactwidget_contactadditional Table">
+		<column xsi:type="int" name="contactadditional_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="contactadditional_id"/>
+		</constraint>
+		<column name="name" nullable="true" xsi:type="varchar" comment="name" length="255"/>
+		<column name="email" nullable="true" xsi:type="varchar" comment="email" length="255"/>
+		<column name="subject" nullable="true" xsi:type="varchar" comment="subject" length="255"/>
+		<column name="comment" nullable="true" xsi:type="varchar" comment="comment" length="255"/>
+		<column name="birthday" nullable="true" xsi:type="varchar" comment="Bithday Date"/>
+		<column name="formtype" nullable="true" xsi:type="text" comment="formtype"/>
+		<column name="customertype" nullable="true" xsi:type="text" comment="customertype"/>
+	</table>
+</schema>

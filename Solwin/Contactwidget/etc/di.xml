@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <preference for="\Magento\Framework\Mail\Template\TransportBuilder" type="Solwin\Contactwidget\Model\Mail\TransportBuilder" />
+    <preference for="Solwin\Contactwidget\Api\ContactAdditionalRepositoryInterface" type="Solwin\Contactwidget\Model\ContactAdditionalRepository"/>
+  <preference for="Solwin\Contactwidget\Api\Data\ContactAdditionalInterface" type="Solwin\Contactwidget\Model\ContactAdditional"/>
+  <preference for="Solwin\Contactwidget\Api\Data\ContactAdditionalSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+  <virtualType name="Solwin\Contactwidget\Model\ResourceModel\ContactAdditional\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <arguments>
+      <argument name="mainTable" xsi:type="string">solwin_contactwidget_contactadditional</argument>
+      <argument name="resourceModel" xsi:type="string">Solwin\Contactwidget\Model\ResourceModel\ContactAdditional\Collection</argument>
+    </arguments>
+  </virtualType>
+  <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+      <argument name="collections" xsi:type="array">
+        <item name="solwin_contactwidget_contactadditional_listing_data_source" xsi:type="string">Solwin\Contactwidget\Model\ResourceModel\ContactAdditional\Grid\Collection</item>
+      </argument>
+    </arguments>
+  </type>
+
+</config>
